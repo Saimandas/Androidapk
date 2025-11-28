@@ -2,7 +2,7 @@ name: Flutter Build
 
 on:
   push:
-    branches: 
+    branches:
       - main
       - master
 
@@ -13,9 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.24.0'  # 🔥 FIXED
 
       - name: Get dependencies
         run: flutter pub get
@@ -23,18 +24,9 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK (new flutter-apk path)
-        if: success()
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-release-flutter-apk
+          name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
-          if-no-files-found: warn
-
-      - name: Upload APK (older apk/release path)
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-release-apk
-          path: build/app/outputs/apk/release/app-release.apk
           if-no-files-found: warn
