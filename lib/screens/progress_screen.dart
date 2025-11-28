@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ProgressScreen extends StatelessWidget {
@@ -8,14 +7,14 @@ class ProgressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Progress")),
-
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),a
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: ListTile(
                 leading: Icon(Icons.local_fire_department, color: Colors.red),
                 title: Text("Streak"),
@@ -26,7 +25,9 @@ class ProgressScreen extends StatelessWidget {
             SizedBox(height: 10),
 
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: ListTile(
                 leading: Icon(Icons.warning, color: Colors.orange),
                 title: Text("Weak Questions"),
@@ -39,7 +40,9 @@ class ProgressScreen extends StatelessWidget {
             SizedBox(height: 10),
 
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: ListTile(
                 leading: Icon(Icons.bar_chart, color: Colors.blue),
                 title: Text("Overall Progress"),
